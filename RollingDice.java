@@ -16,10 +16,12 @@ import javax.swing.JLabel;
 public class GUI implements ActionListener {
 	
 	int count = 0;
-	JLabel label;
+	private JLabel label;
+	private JFrame frame;
+	private JPanel panel;
 	
 	public GUI() {
-        JFrame frame = new JFrame();
+        frame = new JFrame();
 
         JButton button = new JButton("Click me");
         button.addActionListener(this);
@@ -27,7 +29,7 @@ public class GUI implements ActionListener {
         
         label = new JLabel("Number of clicks: 0");
 
-        JPanel panel = new JPanel();
+        panel = new JPanel();
 
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
         panel.setLayout(new GridLayout(0, 1));
@@ -52,12 +54,11 @@ public class GUI implements ActionListener {
 
 
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
-	
+		
 		
 		count++;
-		
+		label.setText("Number of clicks: " + count);
 	}
 
 }
