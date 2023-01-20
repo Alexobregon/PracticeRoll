@@ -1,7 +1,12 @@
+import java.util.Random;
 
 public class RollingDice {
 
 public static void main(String[] args) {
-    System.out.println("You roolled a 6");
+
+    Random rand = new Random();
+    int x = rand.nextInt(6);
+
+    System.out.println("You rolled a: " + x);
    }
 }
